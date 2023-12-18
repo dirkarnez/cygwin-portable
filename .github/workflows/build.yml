@@ -26,12 +26,16 @@ jobs:
           
       - shell: cmd
         run: |
-          set __COMPAT_LAYER=RUNASINVOKER
           installer.exe ^
+          --no-admin ^
           --quiet-mode ^
           --root "%cd%\cygwin" ^ 
-          --arch x64 ^ --local-package-dir "%cd%\cygwin\packages" ^
+          --local-package-dir "%cd%\cygwin\.pkg-cache"
+          --arch x64 ^ 
+          --delete-orphans ^
           --prune-install ^
+          --upgrade-also ^
+          --no-replaceonreboot ^
           --packages openmpi
           
       - name: Archive Release
