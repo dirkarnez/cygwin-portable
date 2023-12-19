@@ -38,6 +38,14 @@ jobs:
           --no-replaceonreboot ^
           --packages openmpi
           
+      - shell: cmd
+        run: |
+          installer.exe ^
+          --no-admin ^
+          --quiet-mode ^
+          --arch x64 ^
+          --packages gcc-core
+          
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
