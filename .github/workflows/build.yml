@@ -21,12 +21,12 @@ jobs:
       - name: installer
         shell: cmd
         run: |
-          curl -L -J --output installer.exe "https://www.cygwin.com/setup-x86_64.exe" &&^
+          curl -L -O "https://www.cygwin.com/setup-x86_64.exe" &&^
           dir
           
       - shell: cmd
         run: |
-          installer.exe ^
+          setup-x86_64.exe ^
           --no-admin ^
           --quiet-mode ^
           --root "%cd%\cygwin" ^ 
@@ -36,15 +36,15 @@ jobs:
           --prune-install ^
           --upgrade-also ^
           --no-replaceonreboot ^
-          --packages openmpi
-          
+          --packages "openmpi,gcc-g++,gcc-core"
+ 
       - shell: cmd
         run: |
-          installer.exe ^
+          setup-x86_64.exe ^
           --no-admin ^
           --quiet-mode ^
           --arch x64 ^
-          --packages gcc-core
+          --packages libopenmpi-devel
           
       - name: Archive Release
         uses: thedoctor0/zip-release@master
