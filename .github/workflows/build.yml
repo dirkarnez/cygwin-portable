@@ -30,7 +30,8 @@ jobs:
           --no-admin ^
           --quiet-mode ^
           --root "%cd%\cygwin" ^ 
-          --local-package-dir "%cd%\cygwin\.pkg-cache"
+          --local-package-dir "%cd%\cygwin\.pkg-cache" ^
+          --site "http://cygwin.mirrors.hoobly.com/" ^
           --arch x64 ^ 
           --delete-orphans ^
           --prune-install ^
@@ -41,6 +42,7 @@ jobs:
       - shell: cmd
         run: |
           setup-x86_64.exe ^
+          --site "http://cygwin.mirrors.hoobly.com/" ^
           --no-admin ^
           --quiet-mode ^
           --arch x64 ^
