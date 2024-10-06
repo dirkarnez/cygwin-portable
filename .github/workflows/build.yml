@@ -28,7 +28,7 @@ jobs:
           ls && \
           cd '${{ github.workspace }}' && \
           ls && \
-          g++ --version && 
+          g++ --version && \
           cygcheck -v
           
       - name: Archive Release
