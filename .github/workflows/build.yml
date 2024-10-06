@@ -28,8 +28,7 @@ jobs:
           ls && \
           cd '${{ github.workspace }}' && \
           ls && \
-          g++ --version && \
-          cygcheck -v
+          g++ --version
           
       - name: Archive Release
         uses: thedoctor0/zip-release@master
