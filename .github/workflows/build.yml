@@ -36,11 +36,11 @@ jobs:
         with:
           type: 'zip'
           directory: "C:/tools/cygwin"
-          filename: "cygwin-${{ github.ref_name }}-${{ matrix.sys }}.zip"
+          filename: "cygwin-${{ github.ref_name }}.zip"
           
       - name: Release prebuilt
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "C:/tools/cygwin/cygwin-${{ github.ref_name }}-${{ matrix.sys }}.zip"
+          artifacts: "C:/tools/cygwin/cygwin-${{ github.ref_name }}.zip"
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
