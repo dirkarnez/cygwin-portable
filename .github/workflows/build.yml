@@ -28,7 +28,8 @@ jobs:
           ls && \
           cd '${{ github.workspace }}' && \
           ls && \
-          g++ --version
+          g++ --version && \
+          uname -a
           
       - name: Archive Release
         uses: thedoctor0/zip-release@master
