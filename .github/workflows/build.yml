@@ -21,8 +21,8 @@ jobs:
       - name: Set up Cygwin
         uses: egor-tensin/setup-cygwin@v4
         with:
-          packages: gcc-g++ make
-
+          packages: autoconf automake libtool gcc-g++ gcc-core make openssl cygwin-devel pkg-config openssl-devel
+    
       - run: |
           echo $(pwd) && \
           ls && \
