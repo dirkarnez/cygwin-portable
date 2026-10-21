@@ -19,7 +19,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Set up Cygwin
-        uses: egor-tensin/setup-cygwin@v4
+        uses: egor-tensin/setup-cygwin@v4.0.5
         with:
           packages: >-
             autoconf
